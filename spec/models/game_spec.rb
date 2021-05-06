@@ -108,12 +108,10 @@ RSpec.describe Game, type: :model do
     end
 
     it 'return current_game_question' do
-      game_w_questions.current_level = 1
-      expect(game_w_questions.current_game_question).to eq(game_w_questions.game_questions[1])
+      expect(game_w_questions.current_game_question).to eq(game_w_questions.game_questions[0])
     end
 
     it 'return previous_level' do
-      game_w_questions.current_level
       expect(game_w_questions.previous_level).to eq(game_w_questions.current_level - 1)
     end
   end
